@@ -2,5 +2,9 @@
 	"raven_deploy": {
 		"aws_key": "YourAWSAccessKey",
 		"aws_secret": "YourAWSSecretKey"
-	}
+	},
+	"raven_db": {
+		"root_password": "super secret"
+	},
+	"cookbook_dev_dir": null
 }
