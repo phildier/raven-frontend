@@ -1,0 +1,59 @@
+DEPENDENCIES
+  potg-app
+    path: ../development/potg-app
+  raven-db
+    path: ../development/raven-db
+  raven-deploy
+    path: ../development/raven-deploy
+  raven-dev
+    path: ../development/raven-dev
+  raven-gearman
+    path: ../development/raven-gearman
+  raven-nodejs
+    path: ../development/raven-nodejs
+  raven-php
+    path: ../development/raven-php
+  raven-redis
+    path: ../development/raven-redis
+  raven-supervisor
+    path: ../development/raven-supervisor
+  raven_frontend
+    path: raven_frontend
+  site_auditor_grid
+    path: ../development/site_auditor_grid/site_auditor_grid
+  yum
+
+GRAPH
+  apache2 (3.1.0)
+  aws (2.9.2)
+    ohai (>= 2.1.0)
+  ohai (2.1.0)
+  potg-app (0.1.0)
+    apache2 (>= 0.0.0)
+    raven-deploy (>= 0.0.0)
+    raven-php (>= 0.0.0)
+  raven-db (0.1.1)
+    raven-deploy (>= 0.0.0)
+    yum-mysql-community (>= 0.0.0)
+  raven-deploy (0.1.2)
+    apache2 (>= 0.0.0)
+    aws (>= 0.0.0)
+    raven-dev (>= 0.0.0)
+    raven-php (>= 0.0.0)
+    yum (>= 0.0.0)
+  raven-dev (0.1.0)
+  raven-gearman (0.1.0)
+  raven-nodejs (0.1.0)
+    raven-deploy (>= 0.0.0)
+  raven-php (0.1.2)
+  raven-redis (0.1.0)
+    raven-deploy (>= 0.0.0)
+  raven-supervisor (0.1.11)
+  raven_frontend (0.1.0)
+  site_auditor_grid (0.1.0)
+    raven-deploy (>= 0.0.0)
+    raven-supervisor (>= 0.0.0)
+    yum (>= 0.0.0)
+  yum (3.10.0)
+  yum-mysql-community (0.1.21)
+    yum (>= 3.2)

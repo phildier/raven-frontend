@@ -1,0 +1,6 @@
+{
+	"raven_deploy": {
+		"aws_key": "YourAWSAccessKey",
+		"aws_secret": "YourAWSSecretKey"
+	}
+}

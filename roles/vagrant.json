@@ -1,0 +1,55 @@
+{
+	"name": "vagrant",
+	"description": "vagrant development role",
+	"json_class": "Chef::Role",
+	"default_attributes": {
+		"raven_deploy": {
+			"attachments_dir": "/vagrant/cache"
+		},
+		"raven_frontend": {
+			"revision": "feature/optionally-use-new-lwrp",
+			"gearman": {
+				"worker": true
+			}
+		},
+		"raven_gearman": {
+			"master": true
+		},
+		"potg_app": {
+			"revision": "feature/use-new-lwrp-if-available"
+		},
+		"raven_db": {
+			"deploy_keys_tarball": "schema-deploy-keys.tar",
+			"local_dir": "/opt/local_db",
+			"root_password": "vagrant",
+			"local": {
+				"raven": {
+					"branch": "master",
+					"name": "raven",
+					"repo": "ssh://git@github.com/raventools/ravenapp-mysql"
+				}
+			}
+		}
+	},
+	"chef_type": "role",
+	"run_list": [
+		"raven-dev",
+		"raven-deploy::install_aws_credentials",
+		"raven-redis",
+		"raven-nodejs",
+		"raven-nodejs::install_mocha",
+		"raven-php",
+		"raven-db",
+		"raven-db::install_local",
+		"raven-supervisor",
+		"raven-gearman::master",
+		"raven-gearman::dev",
+		"raven_frontend",
+		"raven_frontend::deploy_tag",
+		"potg-app",
+		"potg-app::deploy_tag",
+		"site_auditor_grid",
+		"site_auditor_grid::deploy_tag"
+	],
+	"env_run_lists": {}
+}

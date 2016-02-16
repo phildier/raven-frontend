@@ -1,0 +1,14 @@
+{
+	"raven_app_root":"<%=@raven_app_root%>",
+	"potg_app_root":"<%=@potg_app_root%>",
+	"gearman_server":"<%=@gearman_server%>",
+	"sa_gearman_server":"<%=@sa_gearman_server%>",
+	"prince_gearman_server":"<%=@prince_gearman_server%>",
+	"reports_gearman_server":"<%=@reports_gearman_server%>",
+	"memcached_servers":{
+		"session":<%=JSON.generate(@session_memcached_servers)%>,
+		"cache":<%=JSON.generate(@cache_memcached_servers)%>
+	},
+	"service_layer":"<%=@service_layer%>",
+	"service_type":"<%=@server_type%>"
+}

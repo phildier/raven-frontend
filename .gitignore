@@ -1,0 +1,9 @@
+cache
+vendor
+*.swp
+*.swo
+overrides.json
+.vagrant
+berks-cookbooks
+npm-debug.log
+node_modules
