@@ -33,7 +33,7 @@ attribute "raven_frontend/repository",
     :required => "recommended",
     :type => "string",
     :recipes => ["raven_frontend::deploy_tag"],
-    :default => "git@github.com:raventools/raven_frontend.git"
+    :default => "git@github.com:raventools/ravenapp.git"
 
 attribute "raven_frontend/revision",
     :display_name => "Application Revision",
