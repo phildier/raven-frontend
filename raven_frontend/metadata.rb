@@ -18,7 +18,7 @@ recipe "raven_frontend::gearman_workers", "configures gearman workers"
 recipe "raven_frontend::install_chef_registry", "installs chef registry config"
 
 attribute "raven_frontend",
-    :display_name => "Site Auditor Grid",
+    :display_name => "RavenApp Frontend",
     :type => "hash"
 
 attribute "raven_frontend/app_path",
