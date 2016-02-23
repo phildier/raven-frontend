@@ -7,3 +7,5 @@ overrides.json
 berks-cookbooks
 npm-debug.log
 node_modules
+.chef
+data_bags

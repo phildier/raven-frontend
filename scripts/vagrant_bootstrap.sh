@@ -1,8 +1,9 @@
 #!/bin/bash
 
+deploy_dir='/vagrant'
+
 mkdir -p cache
 
-deploy_dir='/vagrant'
 chefdk_url='https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chefdk-0.4.0-1.x86_64.rpm'
 chefdk_filename="$deploy_dir/cache/"`basename $chefdk_url`
 

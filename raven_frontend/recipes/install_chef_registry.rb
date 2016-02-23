@@ -1,6 +1,10 @@
 # configures ChefRegistry php class
 #
 
+directory node[:raven_frontend][:app_path] do
+	recursive true
+end
+
 raven_app_path = "#{node[:raven_frontend][:app_path]}/current"
 
 if defined?(node[:potg_app][:app_path]) then

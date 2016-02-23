@@ -22,17 +22,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		config.vm.synced_folder config_overrides['cookbook_dev_dir'], "/development"
 	end
 
+	# download data bags
+	config.vm.provision :shell, path: "scripts/data_bags.sh"
+
 	# initial non-chef bootstrap
 	config.vm.provision :shell, path: "scripts/vagrant_bootstrap.sh"
 
 	# everything else is set up via chef-solo
 	config.vm.provision "chef_solo" do |chef|
-	  chef.cookbooks_path = "berks-cookbooks"
-	  chef.roles_path = "roles"
-	  chef.add_role "vagrant"
-	  chef.json = config_overrides
+		chef.install = false
+		chef.cookbooks_path = "berks-cookbooks"
+		chef.roles_path = "roles"
+		chef.add_role "vagrant"
+		chef.json = config_overrides
 	end
 
+	config.vm.provider :virtualbox do |vb|
+		vb.customize ["modifyvm", :id, "--natdnsproxy1", "off"]
+		vb.customize ["modifyvm", :id, "--natdnshostresolver1", "off"]
+	end
 end
 
 # vim:set syntax=ruby:

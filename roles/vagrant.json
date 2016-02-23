@@ -33,8 +33,8 @@
 	},
 	"chef_type": "role",
 	"run_list": [
-		"raven-dev",
 		"raven-deploy::install_aws_credentials",
+		"raven-dev",
 		"raven-redis",
 		"raven-nodejs",
 		"raven-nodejs::install_mocha",

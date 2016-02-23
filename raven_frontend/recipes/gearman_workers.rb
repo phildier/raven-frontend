@@ -12,5 +12,6 @@ if node[:raven_frontend][:gearman][:worker].to_s == "true" then
 		numprocs node[:raven_frontend][:gearman][:numprocs]
 		exitcodes [111]
 		autorestart "unexpected"
+		create_dir false
 	end
 end
