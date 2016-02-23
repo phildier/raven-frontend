@@ -8,6 +8,7 @@ version          '0.1.0'
 
 depends "raven-deploy"
 depends "raven-supervisor"
+depends "raven-gearman"
 
 recipe "raven_frontend::default", "set up frontend dependencies"
 recipe "raven_frontend::deploy_tag", "deploys the app"
@@ -139,5 +140,4 @@ attribute "raven_frontend/chef_registry/server_type",
     :choice => ["production","testing"],
     :default => "production",
     :recipes => ["raven_frontend:install_chef_registry"]
-
 
