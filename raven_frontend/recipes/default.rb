@@ -1,6 +1,12 @@
 # prepare for deployment
 include_recipe "raven-deploy"
 
+# we need php
+include_recipe "raven-php"
+
+# and we need node
+include_recipe "raven-nodejs"
+
 # install and configure supervisor
 include_recipe "raven-supervisor"
 

@@ -9,6 +9,8 @@ version          '0.1.0'
 depends "raven-deploy"
 depends "raven-supervisor"
 depends "raven-gearman"
+depends "raven-php"
+depends "raven-nodejs"
 
 recipe "raven_frontend::default", "set up frontend dependencies"
 recipe "raven_frontend::deploy_tag", "deploys the app"
