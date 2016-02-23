@@ -9,7 +9,7 @@ if node[:raven_frontend][:gearman][:worker].to_s == "true" then
 		command cmd
 		directory dir
 		user "apache"
-		numprocs node[:raven_frontend][:gearman][:numprocs]
+		numprocs node[:raven_frontend][:gearman][:numprocs].to_i
 		exitcodes [111]
 		autorestart "unexpected"
 		create_dir false
