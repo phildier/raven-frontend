@@ -59,7 +59,7 @@ attribute "raven_frontend/port",
     :required => "recommended",
     :type => "string",
     :recipes => ["raven_frontend::deploy_tag"],
-    :default => ["80"]
+    :default => "80"
 
 attribute "raven_frontend/gearman/worker",
     :display_name => "Start Gearman Workers",
