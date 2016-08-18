@@ -53,6 +53,14 @@ attribute "raven_frontend/domains",
     :recipes => ["raven_frontend::deploy_tag"],
     :default => ["raven-seo-tools.com"]
 
+attribute "raven_frontend/port",
+    :display_name => "Application port",
+    :description => "Port this vhost answers to.",
+    :required => "recommended",
+    :type => "array",
+    :recipes => ["raven_frontend::deploy_tag"],
+    :default => ["80"]
+
 attribute "raven_frontend/gearman/worker",
     :display_name => "Start Gearman Workers",
     :description => "Indicates whether or not to start gearman workers",
