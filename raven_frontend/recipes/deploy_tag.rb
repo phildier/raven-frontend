@@ -8,5 +8,5 @@ raven_deploy_app "ravenapp" do
 	revision node[:raven_frontend][:revision]
 	docroot node[:raven_frontend][:docroot]
 	domains node[:raven_frontend][:domains]
-	port node[:raven_frontend][:port]
+	port node[:raven_frontend][:port].to_i
 end

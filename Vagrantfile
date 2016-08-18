@@ -9,11 +9,12 @@ config_overrides = JSON.parse(IO.read(overrides_json))
 
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  
-	config.vm.box = "raven-centos6"
-	config.vm.box_url = "http://raven-opensource.s3.amazonaws.com/raven-centos6.box"
 
-	config.vm.network "forwarded_port", guest: 80, host: 8080
+	config.vm.box = "centos6-raven"
+	config.vm.box_url = "http://raven-opensource.s3.amazonaws.com/boxes/centos6-raven.json"
+  
+
+	config.vm.network "forwarded_port", guest: 8000, host: 8080
 	config.vm.network "private_network", ip: "10.122.0.11"
 
 	config.vm.synced_folder ".", "/vagrant"
