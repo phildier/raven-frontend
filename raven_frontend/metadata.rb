@@ -57,7 +57,7 @@ attribute "raven_frontend/port",
     :display_name => "Application port",
     :description => "Port this vhost answers to.",
     :required => "recommended",
-    :type => "array",
+    :type => "string",
     :recipes => ["raven_frontend::deploy_tag"],
     :default => ["80"]
 
