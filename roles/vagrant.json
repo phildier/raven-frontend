@@ -7,7 +7,8 @@
 			"attachments_dir": "/vagrant/cache"
 		},
 		"raven_frontend": {
-			"revision": "feature/optionally-use-new-lwrp",
+			"revision": "master",
+			"port": "8000",
 			"gearman": {
 				"worker": true
 			}
@@ -16,7 +17,7 @@
 			"master": true
 		},
 		"potg_app": {
-			"revision": "feature/use-new-lwrp-if-available"
+			"revision": "master"
 		},
 		"raven_db": {
 			"deploy_keys_tarball": "schema-deploy-keys.tar",
@@ -37,6 +38,7 @@
 		"raven-dev",
 		"raven-redis",
 		"raven-nodejs",
+		"raven-nodejs::install_node_45",
 		"raven-nodejs::install_mocha",
 		"raven-php",
 		"raven-db",

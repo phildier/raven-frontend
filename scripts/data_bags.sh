@@ -23,16 +23,19 @@ aws s3 sync s3://$data_bags_bucket/data_bags/ /var/chef/data_bags/
 aws s3 sync s3://$data_bags_bucket/ /root/.ssh/ --exclude "*" --include known_hosts
 
 if ! gem list -i knife-solo &>/dev/null; then
-	gem install knife-solo knife-solo_data_bag --no-ri --no-rdoc
+	gem install --no-user-install knife-solo knife-solo_data_bag --no-ri --no-rdoc
 fi
 
 cd $deploy_dir
 
 mkdir -p /root/.ssh
 
+cd /var/chef
+
 # loop over deploy key items and write them
 knife solo data bag show deploy_keys \
 	-F json \
+	2>/dev/null \
 	| jq '.|keys[]' | xargs -n1 \
 | while read app; do 
 
@@ -40,7 +43,9 @@ knife solo data bag show deploy_keys \
 
 	if [ ! -f $key_path ]; then
 		knife solo data bag show deploy_keys $app \
-			-F json | jq '.private_key' \
+			-F json \
+			2>/dev/null \
+			| jq '.private_key' \
 			| xargs -n1 | sed 's/\\n/\n/g' \
 		> $key_path
 		chmod 600 $key_path

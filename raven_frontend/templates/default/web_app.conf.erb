@@ -1,3 +1,4 @@
+Listen *:<%= @params[:port] %>
 <VirtualHost *:<%= @params[:port] %>>
   ServerName <%= @params[:server_name] %>
   <% if @params[:server_aliases] && !@params[:server_aliases].empty? -%>
