@@ -18,3 +18,8 @@ include_recipe "raven-gearman"
 
 # set up gearman workers
 include_recipe "raven_frontend::gearman_workers"
+
+
+#install ravenapp only required extras
+package "php56u-tclink"
+package "prince"
